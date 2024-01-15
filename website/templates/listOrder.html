@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}订单列表{% endblock %}
+
+{% block content %}
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">订单列表</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">可以对以下订单进行查询、操作</li>
+        </ol>
+    <table>
+            {%  for order in user.order %}
+                <table class="table">{{ order.cName }}</table>
+            {% endfor %}
+    </table>
+
+
+
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+{% block title %}新订单{% endblock %}
+
+{% block content %}
+    <div class="container-fluid px-4">
+                        <h1 class="mt-4">新订单</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">请输入以下信息进行新订单制作</li>
+                        </ol>
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                新订单内容
+                            </div>
+                            <div class="card-body">
+                                <form method="POST">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <th>客户名称</th>
+                                            <td><input type="text" id="cName" name="cName" placeholder="请输入客户名称"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>客户订单号</th>
+                                            <td><input type="text" id="cOrderId" name="cOrderId" placeholder="请输入客户订单号"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>客户订单日期</th>
+                                            <td><input type="date" id="cOrderDate" name="cOrderDate" lang="zh-CN"></td>
+                                        </tr><tr>
+                                            <th>客户交货日期</th>
+                                            <td><input type="date" id="cDeliveryDate" name="cDeliveryDate" lang="zh-CN"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>产品名称</th>
+                                            <td><input type="text" id="pName" name="pName" placeholder="请输入产品名称"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>材质</th>
+                                            <td><input type="text" id="material" name="material" placeholder="请输入材质"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>尺寸</th>
+                                            <td><input type="text" id="size" name="size" placeholder="请输入产品尺寸"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>数量</th>
+                                            <td><input type="text" id="quantity" name="quantity" placeholder="请输入产品数量"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>单价</th>
+                                            <td><input type="text" id="price" name="price" placeholder="请输入单价"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>白板纸型号</th>
+                                            <td><input type="text" id="surface-id" name="surface-id" placeholder="请输入白板纸型号"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>白板纸尺寸</th>
+                                           <td><input type="text" id="surface-size" name="surface-size" placeholder="请输入白板纸尺寸"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>白板纸数量</th>
+                                            <td><input type="text" id="surface-quantity" name="surface-quantity" placeholder="请输入白板纸数量"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>白板纸进度</th>
+                                            <td>
+                                                <select name="surface-stage" id="surface-stage">
+                                                <option value="未订">未订纸</option>
+                                                <option value="待送纸">已订，待送纸</option>
+                                                <option value="已订">已送纸</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr><th>坑纸型号</th>
+                                            <td><input type="text" id="back-id" name="back-id" placeholder="请输入坑纸型号"></td>
+                                        </tr>
+                                        <tr><th>坑纸尺寸</th>
+                                            <td><input type="text" id="back-size" name="back-size" placeholder="请输入坑纸尺寸"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>坑纸数量</th>
+                                            <td><input type="text" id="back-quantity" name="back-quantity" placeholder="请输入坑纸数量"></td>
+                                        </tr>
+                                        <tr>
+                                        <th>坑纸进度</th>
+                                            <td>
+                                                <select name="back-stage" id="back-stage">
+                                                <option value="未订">未订纸</option>
+                                                <option value="待送纸">已订，待送纸</option>
+                                                <option value="已订">已送纸</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                         <th>啤板编号</th>
+                                            <td><input type="text" id="plate-id" name="plate-id" placeholder="请输入啤板编号"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>啤板进度</th>
+                                            <td>
+                                                <select name="plate-stage" id="plate-stage">
+                                                <option value="未订">未订版</option>
+                                                <option value="待送板">已订，待送板</option>
+                                                <option value="已送板">已送板</option>
+                                                </select>
+                                            </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>文件编号</th>
+                                            <td><input type="text" id="doc-id" name="doc-id" placeholder="请输入文件编号"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>文件进度</th>
+                                            <td> <select name="doc-stage" id="doc-stage">
+                                                <option value="未订">未订版</option>
+                                                <option value="待送板">已订，待送板</option>
+                                                <option value="已送板">已送板</option></select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>生产进度</th>
+                                            <td>
+                                                <select name="produce-stage" id="produce-stage">
+                                                <option value="未订">未订版</option>
+                                                <option value="待送板">已订，待送板</option>
+                                                <option value="已送板">已送板</option></select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>送货进度</th>
+                                            <td>
+                                                <select name="delivery-stage" id="delivery-stage">
+                                                <option value="未需送货">未需送货</option>
+                                                <option value="待送货">产品已做好，需待送货</option>
+                                                <option value="已送货">已送货</option></select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            {# 做个选择器 #}
+                                            <th>订单进度</th>
+                                            <td><input type="text" id="order-stage" name="order-stage" placeholder="请输入订单进度"></td>
+                                        </tr>
+                                    </tbody>
+                                    <div><button type="submit" class="btn btn-primary">增加新订单</button></div>
+                                </table>
+                                    </form>
+
+                            </div>
+                        </div>
+                    </div>
+
+{% endblock %}
